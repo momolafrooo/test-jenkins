@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MohamedfallApplication {
 
 	public static void main(String[] args) {
+		System.out.println("SpringApplication start");
 		SpringApplication.run(MohamedfallApplication.class, args);
 	}
 
