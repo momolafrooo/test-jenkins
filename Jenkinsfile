@@ -5,10 +5,10 @@ node {
         DOCKER_IMAGE_TAG = 'latest'
     }
 
-    stage('Checkout') {
-        // Checkout the source code from the GitHub repository
-        git 'https://github.com/momolafrooo/test-jenkins.git'
-    }
+    // stage('Checkout') {
+    //     // Checkout the source code from the GitHub repository
+    //     git 'https://github.com/momolafrooo/test-jenkins.git'
+    // }
 
     stage('Build') {
         // Use the Maven Docker image to build the project
