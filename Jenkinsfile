@@ -12,23 +12,17 @@ node {
 
     stage('Build') {
         // Use the Maven Docker image to build the project
-        docker.image('maven:latest').inside {
-            sh 'mvn clean package'
-        }
+        mvn clean package
     }
 
     stage('Test') {
         // Run the project's tests
-        docker.image('maven:latest').inside {
-            sh 'mvn test'
-        }
+        mvn test
     }
     
     stage('Deploy') {
         // Run the project's tests
-        docker.image('maven:latest').inside {
-            sh 'mvn deploy'
-        }
+        mvn deploy
     }
 
     // stage('Build Docker Image') {
