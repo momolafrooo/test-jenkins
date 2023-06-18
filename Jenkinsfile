@@ -10,8 +10,12 @@ node {
     //     git 'https://github.com/momolafrooo/test-jenkins.git'
     // }
 
-    stage('Build') {
-        mvn clean package
+    stage('Clean') {
+        mvn clean
+    }
+    
+        stage('Package') {
+        mvn package
     }
 
     stage('Test') {
