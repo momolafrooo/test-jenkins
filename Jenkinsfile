@@ -11,17 +11,14 @@ node {
     // }
 
     stage('Build') {
-        // Use the Maven Docker image to build the project
         mvn clean package
     }
 
     stage('Test') {
-        // Run the project's tests
         mvn test
     }
     
     stage('Deploy') {
-        // Run the project's tests
         mvn deploy
     }
 
