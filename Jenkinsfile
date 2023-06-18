@@ -1,9 +1,9 @@
 node {
 
-    environment {
-        DOCKER_IMAGE_NAME = 'momolafrooo/test-jenkins'
-        DOCKER_IMAGE_TAG = 'latest'
-    }
+    // environment {
+    //     DOCKER_IMAGE_NAME = 'momolafrooo/test-jenkins'
+    //     DOCKER_IMAGE_TAG = 'latest'
+    // }
 
     // stage('Checkout') {
     //     // Checkout the source code from the GitHub repository
@@ -11,19 +11,19 @@ node {
     // }
 
     stage('Clean') {
-        mvn clean
+        sh 'mvn clean'
     }
     
-        stage('Package') {
-        mvn package
+    stage('Package') {
+        sh 'mvn package'
     }
 
     stage('Test') {
-        mvn test
+        sh 'mvn test'
     }
     
     stage('Deploy') {
-        mvn deploy
+        sh 'mvn deploy'
     }
 
     // stage('Build Docker Image') {
