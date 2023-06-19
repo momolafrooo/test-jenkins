@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven "maven 3.9.2"
+        docker "Docker"
     }
     
     stages {
