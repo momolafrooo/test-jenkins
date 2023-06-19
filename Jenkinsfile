@@ -28,8 +28,13 @@ pipeline {
         
         stage('Build docker image') {
             steps {
-                sh 'docker build -t momolafrooo/test-jenkins:latest .'
+                script {
+                    withDockerRegistry(toolName: 'Docker') {
+                        sh 'docker build -t momolafrooo/test-jenkins:latest .'
+                    }
+                }
             }
         }
     }
 }
+
