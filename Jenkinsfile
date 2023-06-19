@@ -25,9 +25,9 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Build docker image') {
             steps {
-                sh 'mvn deploy'
+                sh 'docker build -t momolafrooo/test-jenkins:latest .'
             }
         }
     }
