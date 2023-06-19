@@ -29,7 +29,7 @@ pipeline {
         stage('Build docker image') {
             steps {
                 script {
-                    withDockerRegistry(toolName: 'Docker') {
+                    withDockerRegistry(toolName: 'Docker', url: 'https://index.docker.io/v2/') {
                         sh 'docker build -t momolafrooo/test-jenkins:latest .'
                     }
                 }
