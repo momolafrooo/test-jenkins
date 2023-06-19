@@ -5,7 +5,7 @@ FROM adoptopenjdk:11-jdk-hotspot
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/mohamedfall-0.0.1-SNAPSHOT.jar app.jar
+COPY target/mohamedfall-0.0.2-SNAPSHOT.war app.war
 
 # Expose the port your application listens on
 EXPOSE 8080
@@ -14,5 +14,5 @@ EXPOSE 8080
 ENV SPRING_PROFILES_ACTIVE=production
 
 # Run the Spring Boot application when the container starts
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-war", "app.war"]
 
