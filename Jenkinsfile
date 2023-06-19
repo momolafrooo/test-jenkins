@@ -26,13 +26,9 @@ pipeline {
             }
         }
         
-        stage('Build docker image') {
+        stage('Nexus deploy') {
             steps {
-                script {
-                    withDockerRegistry(toolName: 'Docker', url: 'https://index.docker.io/v2/') {
-                        sh 'docker build -t momolafrooo/test-jenkins:latest .'
-                    }
-                }
+                nexusArtifactUploader artifacts: [[artifactId: 'mouhamedfall', classifier: '', file: 'target/mohamedfall-0.0.2-SNAPSHOT.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.groupeisi.m2gl', nexusUrl: '13.53.89.207:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'maven-snapshots', version: '0.0.2-SNAPSHOT'
             }
         }
     }
